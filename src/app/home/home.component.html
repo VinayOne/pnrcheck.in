@@ -1,0 +1,27 @@
+<main>
+    <section class="hero">
+        <h1>Welcome to Indian Railway PNR Status Checker</h1>
+    </section>
+
+    <section class="pnr-form">
+        <div class="pnr-center">
+            <h2>Check PNR Status</h2>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Enter PNR</mat-label>
+                        <input class="pnrBox" matInput />
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button type="button" class="status-btn" mat-raised-button>Check Status</button>
+                </div>
+            </div>
+            <p>Instructions: You can find the PNR number on your ticket.</p>
+        </div>
+    </section>
+    
+    <app-result></app-result>
+</main>
