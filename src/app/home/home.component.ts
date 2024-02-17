@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import { CommonService } from '../shared/common.service';
 
 @Component({
   selector: 'app-home',
@@ -6,5 +8,35 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
+  isSubmitted: boolean = false;
+  isError: boolean = false;
+  pnrData: any;
+
+  pnrForm = new FormGroup({
+    pnrNum: new FormControl<any>('', [Validators.required, Validators.maxLength(10), Validators.minLength(10), Validators.pattern(/^[0-9]*$/)])
+  })
+
+  constructor(private commonService: CommonService) {}
+
+  onSubmit() {
+    if(this.pnrForm.invalid) {
+      this.isError = true;
+    } else {
+      const pnr = this.pnrForm.value.pnrNum;
+      this.isSubmitted = true;
+      this.commonService.getPnrDetails(pnr).subscribe({
+        next: response => {
+          if(response) {
+            this.pnrData = response?.record?.data || {};
+          }
+        },
+        error: err => {
+          console.error('Error: ', err);
+        }
+      })
+    }
+
+  }
+
 
 }

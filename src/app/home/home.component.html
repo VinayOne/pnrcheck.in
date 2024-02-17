@@ -1,27 +1,31 @@
 <main>
     <section class="hero">
-        <h1>Welcome to Indian Railway PNR Status Checker</h1>
+        <h1>Welcome to Indian Railway PNR Status Check</h1>
     </section>
 
     <section class="pnr-form">
         <div class="pnr-center">
             <h2>Check PNR Status</h2>
+            <form [formGroup]="pnrForm" (ngSubmit)="onSubmit()">
             <div class="row">
                 <div class="col">
                     <mat-form-field appearance="fill">
                         <mat-label>Enter PNR</mat-label>
-                        <input class="pnrBox" matInput />
+                        <input class="pnrBox" formControlName="pnrNum" matInput />
+                        <mat-error *ngIf="pnrForm.controls.pnrNum.errors?.['maxlength'] || pnrForm.controls.pnrNum.errors?.['minlength']">Please enter valid 10 digit PNR number</mat-error>
+                        <mat-error *ngIf="pnrForm.controls.pnrNum.errors?.['pattern']">Please enter numbers only</mat-error>
                     </mat-form-field>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
-                    <button type="button" class="status-btn" mat-raised-button>Check Status</button>
+                    <button type="submit" class="status-btn" mat-raised-button [disabled]="pnrForm.invalid">Check Status</button>
                 </div>
             </div>
+            </form>
             <p>Instructions: You can find the PNR number on your ticket.</p>
         </div>
     </section>
     
-    <app-result></app-result>
+    <app-result *ngIf="pnrData" [pnrData]="pnrData"></app-result>
 </main>

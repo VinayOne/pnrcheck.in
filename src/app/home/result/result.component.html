@@ -1,118 +1,82 @@
 <section class="pnr-results">
-   <div class="row">
+  <div class="row">
     <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
-        <mat-card>
-            <mat-card-content>
-                <table class="table table-bordered">
-                    <thead class="table-dark">
-                        <tr>
-                          <th scope="col">S. No.</th>
-                          <th scope="col">Booking Status</th>
-                          <th scope="col">Current Status</th>
-                          <th scope="col">Coach Position</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <th scope="row">1</th>
-                          <td>Mark</td>
-                          <td>Otto</td>
-                          <td>@mdo</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">2</th>
-                          <td>Jacob</td>
-                          <td>Thornton</td>
-                          <td>@fat</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">3</th>
-                          <td>Larry the Bird</td>
-                          <td>@twitter</td>
-                          <td>@Added</td>
-                        </tr>
-                      </tbody>
-                  </table>
-              </mat-card-content>
-        </mat-card>
+      <mat-card>
+        <mat-card-content>
+          <table class="table table-bordered">
+            <thead class="table-primary">
+              <tr>
+                <th scope="col">Train Number</th>
+                <th scope="col">Train Name</th>
+                <th scope="col">Boarding Date<br>(DD-MM-YY)</th>
+                <th scope="col">From<br>(Boarding Point)</th>
+                <th scope="col">To<br>(Reserved Upto)</th>
+                <th scope="col">Class</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">{{pnrData?.TrainNo}}</th>
+                <td>{{pnrData?.TrainName}}</td>
+                <td>{{pnrData?.Doj}}</td>
+                <td>{{pnrData?.BoardingStationName}}</td>
+                <td>{{pnrData?.ReservationUptoName}}</td>
+                <td>{{pnrData?.Class}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </mat-card-content>
+      </mat-card>
+      <mat-card class="mt-2">
+        <mat-card-content>
+          <table class="table table-bordered">
+            <thead class="table-primary">
+              <tr>
+                <th scope="col">Charting Status</th>
+                <th scope="col">Departure Time</th>
+                <th scope="col">Arrival Time</th>
+                <th scope="col">Journey Duration</th>                
+                <th scope="col">Has Pantry</th>
+                <th scope="col">Expected Platform</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">{{pnrData?.ChartPrepared ? 'Chart Prepared' : 'Chart not prepared'}}</th>
+                <td>{{pnrData?.DepartureTime}}</td>
+                <td>{{pnrData?.ArrivalTime}}</td>
+                <td>{{pnrData?.Duration}} Hrs</td>                
+                <td>{{pnrData?.HasPantry ? 'Yes' : 'No'}}</td>
+                <td>{{pnrData?.ExpectedPlatformNo}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </mat-card-content>
+      </mat-card>
     </div>
     <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
-        <mat-card>
-            <mat-card-content>
-                <table class="table table-bordered">
-                    <thead class="table-dark">
-                        <tr>
-                          <th scope="col">Train Number</th>
-                          <th scope="col">Train Name</th>
-                          <th scope="col">Boarding Date (DD-MM-YY)</th>
-                          <th scope="col">From (Boarding Point)</th>
-                          <th scope="col">To (Reserved Upto)</th>
-                          <th scope="col">Class</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <th scope="row">1</th>
-                          <td>Mark</td>
-                          <td>Otto</td>
-                          <td>@mdo</td>
-                          <td>@mdo</td>
-                          <td>@mdo</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">2</th>
-                          <td>Jacob</td>
-                          <td>Thornton</td>
-                          <td>@fat</td>
-                          <td>@mdo</td>
-                          <td>@mdo</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">3</th>
-                          <td>Larry the Bird</td>
-                          <td>@twitter</td>
-                          <td>@mdo</td>
-                          <td>@mdo</td>
-                          <td>@mdo</td>
-                        </tr>
-                      </tbody>
-                  </table>
-              </mat-card-content>
-        </mat-card>
-        <mat-card class="mt-4">
-            <mat-card-content>
-                <table class="table table-bordered">
-                    <thead class="table-dark">
-                        <tr>
-                          <th scope="col">S. No.</th>
-                          <th scope="col">Booking Status</th>
-                          <th scope="col">Current Status</th>
-                          <th scope="col">Coach Position</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <th scope="row">1</th>
-                          <td>Mark</td>
-                          <td>Otto</td>
-                          <td>@mdo</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">2</th>
-                          <td>Jacob</td>
-                          <td>Thornton</td>
-                          <td>@fat</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">3</th>
-                          <td>Larry the Bird</td>
-                          <td>@twitter</td>
-                          <td>@Added</td>
-                        </tr>
-                      </tbody>
-                  </table>
-              </mat-card-content>
-        </mat-card>
+      <mat-card>
+        <mat-card-content>
+          <table class="table table-bordered">
+            <thead class="table-primary">
+              <tr>
+                <th scope="col">S. No.</th>
+                <th scope="col">Booking Status</th>
+                <th scope="col">Current Status</th>
+                <th scope="col">Confirm Percentage(%)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let passenger of pnrData.PassengerStatus">
+                <th scope="row">{{passenger?.Number}}</th>
+                <td>{{passenger?.BookingStatus}}<span *ngIf="passenger?.BookingBerthCode"> - {{passenger?.BookingBerthCode}}</span></td>
+                <td>{{passenger?.CurrentStatus}}<span *ngIf="passenger?.CurrentBerthCode"> - {{passenger?.CurrentBerthCode}}</span></td>
+                <td>{{passenger?.PredictionPercentage || 'Not Available'}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </mat-card-content>
+      </mat-card>
     </div>
-   </div>
+  </div>
 </section>
