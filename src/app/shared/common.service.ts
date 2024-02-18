@@ -19,6 +19,6 @@ export class CommonService {
 
   getPnrDetails(pnr: number) {
     // return this.http.get<any>(`https://irctc1.p.rapidapi.com/api/v3/getPNRStatus?pnrNumber=${pnr}`, headerOptions);
-    return this.http.get<any>(`https://api.jsonbin.io/v3/qs/65cf69df1f5677401f302f38`, headerOptions);
+    return this.http.get<any>(`https://api.jsonbin.io/v3/qs/65d0ebfedc74654018a6212c`, headerOptions);
   }
 }

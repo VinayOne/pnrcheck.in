@@ -22,12 +22,13 @@ export class HomeComponent {
     if(this.pnrForm.invalid) {
       this.isError = true;
     } else {
-      const pnr = this.pnrForm.value.pnrNum;
       this.isSubmitted = true;
+      const pnr = this.pnrForm.value.pnrNum;
       this.commonService.getPnrDetails(pnr).subscribe({
         next: response => {
           if(response) {
             this.pnrData = response?.record?.data || {};
+            this.isSubmitted = false;
           }
         },
         error: err => {

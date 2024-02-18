@@ -8,6 +8,8 @@ import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
 import { HomeComponent } from '../home/home.component';
 import { ResultComponent } from '../home/result/result.component';
+import { LoaderComponent } from '../home/loader/loader.component';
+import { ServicesComponent } from '../home/services/services.component';
 
 
 
@@ -16,7 +18,9 @@ import { ResultComponent } from '../home/result/result.component';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    ResultComponent
+    ResultComponent,
+    LoaderComponent,
+    ServicesComponent
   ],
   imports: [
     CommonModule,
@@ -35,7 +39,9 @@ import { ResultComponent } from '../home/result/result.component';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    ResultComponent
+    ResultComponent,
+    LoaderComponent,
+    ServicesComponent
   ]
 })
 export class SharedModule { }

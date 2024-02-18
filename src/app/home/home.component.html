@@ -25,7 +25,9 @@
             </form>
             <p>Instructions: You can find the PNR number on your ticket.</p>
         </div>
+        <app-loader *ngIf="isSubmitted" class="spinner"></app-loader>
     </section>
     
     <app-result *ngIf="pnrData" [pnrData]="pnrData"></app-result>
+    <app-services></app-services>
 </main>

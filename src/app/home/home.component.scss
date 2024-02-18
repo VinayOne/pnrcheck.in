@@ -11,7 +11,16 @@ mat-error {
     font-weight: 500;
 }
 
+.pnr-form {
+    position: relative;
+}
+
 .pnr-form button:disabled[type="submit"] {
     background-color: #959595;
     color:#e2e2e2;
+}
+
+.spinner{
+    position: absolute;
+    bottom: 3rem;
 }
