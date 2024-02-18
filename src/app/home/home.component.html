@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col">
                     <mat-form-field appearance="fill">
-                        <mat-label>Enter PNR</mat-label>
+                        <mat-label>Enter 10 Digit PNR</mat-label>
                         <input class="pnrBox" formControlName="pnrNum" matInput />
                         <mat-error *ngIf="pnrForm.controls.pnrNum.errors?.['maxlength'] || pnrForm.controls.pnrNum.errors?.['minlength']">Please enter valid 10 digit PNR number</mat-error>
                         <mat-error *ngIf="pnrForm.controls.pnrNum.errors?.['pattern']">Please enter numbers only</mat-error>
@@ -27,7 +27,7 @@
         </div>
         <app-loader *ngIf="isSubmitted" class="spinner"></app-loader>
     </section>
-    
+    <app-pnrinfo *ngIf="!pnrData"></app-pnrinfo>
     <app-result *ngIf="pnrData" [pnrData]="pnrData"></app-result>
     <app-services></app-services>
 </main>

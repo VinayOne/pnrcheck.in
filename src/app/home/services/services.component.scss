@@ -1,11 +1,6 @@
 .container {
     padding: 1rem;
 }
-.example-card {
-    max-width: 300px;
-  }
-  
-  .example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
+.material-card {
+    max-width: auto;
   }

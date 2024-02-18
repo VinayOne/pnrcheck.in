@@ -9,7 +9,7 @@ export class ResultComponent implements OnInit {
   @Input() pnrData: any;
 
   ngOnInit(): void {
-    console.log('pnrData: ', this.pnrData);
+    
   }
 
 }

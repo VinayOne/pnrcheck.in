@@ -10,6 +10,8 @@ import { HomeComponent } from '../home/home.component';
 import { ResultComponent } from '../home/result/result.component';
 import { LoaderComponent } from '../home/loader/loader.component';
 import { ServicesComponent } from '../home/services/services.component';
+import { PnrinfoComponent } from '../home/pnrinfo/pnrinfo.component';
+import { CommonService } from './common.service';
 
 
 
@@ -20,7 +22,8 @@ import { ServicesComponent } from '../home/services/services.component';
     HomeComponent,
     ResultComponent,
     LoaderComponent,
-    ServicesComponent
+    ServicesComponent,
+    PnrinfoComponent
   ],
   imports: [
     CommonModule,
@@ -41,7 +44,11 @@ import { ServicesComponent } from '../home/services/services.component';
     HomeComponent,
     ResultComponent,
     LoaderComponent,
-    ServicesComponent
+    ServicesComponent,
+    PnrinfoComponent
+  ],
+  providers: [
+    CommonService
   ]
 })
 export class SharedModule { }
