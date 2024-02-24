@@ -18,7 +18,7 @@ export class CommonService {
   constructor(private http: HttpClient) { }
 
   getPnrDetails(pnr: number) {
-    //return this.http.get<any>(`https://irctc1.p.rapidapi.com/api/v3/getPNRStatus?pnrNumber=${pnr}`, headerOptions);
-     return this.http.get<any>(`https://api.jsonbin.io/v3/qs/65da2bf4266cfc3fde8ec826`, headerOptions);
+    return this.http.get<any>(`https://irctc1.p.rapidapi.com/api/v3/getPNRStatus?pnrNumber=${pnr}`, headerOptions);
+    // return this.http.get<any>(`https://api.jsonbin.io/v3/qs/65da2bf4266cfc3fde8ec826`, headerOptions);
   }
 }
