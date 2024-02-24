@@ -27,8 +27,10 @@ export class HomeComponent {
       this.commonService.getPnrDetails(pnr).subscribe({
         next: response => {
           if(response) {
-            this.pnrData = response?.data || {};
+            console.log('pnrData: ', response);
+            this.pnrData = response?.record || {};
             this.isSubmitted = false;
+            
           }
         },
         error: err => {
