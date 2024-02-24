@@ -2,12 +2,22 @@
     border-bottom: 1px solid #767676;;
 }
 
+.xm {
+    display: none;
+    @media screen and (max-width: 680px) {
+        display: block;
+    }
+}
+
+.md {
+    display: block;
+    @media screen and (max-width: 680px) {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 680px) {
     mat-card {
         margin-bottom: 0.5rem;
-    }
-
-    mat-error {
-        text-align: center;
     }
 }

@@ -1,7 +1,7 @@
 <section class="pnr-results">
   <div class="row">
     <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
-      <mat-card>
+      <mat-card class="md">
         <mat-card-content>
           <table class="table table-bordered">
             <thead class="table-dark">
@@ -27,7 +27,89 @@
           </table>
         </mat-card-content>
       </mat-card>
-      <mat-card class="mt-2">
+      <!-------Mobile only-->
+      <mat-card class="xm">
+        <mat-card-content>
+          <table class="table table-bordered">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">Train Number</th>
+                <th scope="col">Train Name</th>
+                <th scope="col">Boarding Date<br>(DD-MM-YY)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">{{pnrData?.TrainNo}}</th>
+                <td>{{pnrData?.TrainName}}</td>
+                <td>{{pnrData?.Doj}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </mat-card-content>
+      </mat-card>
+      <mat-card class="xm mt-2">
+        <mat-card-content>
+          <table class="table table-bordered">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">From<br>(Boarding Point)</th>
+                <th scope="col">To<br>(Reserved Upto)</th>
+                <th scope="col">Class</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{pnrData?.BoardingStationName}}</td>
+                <td>{{pnrData?.ReservationUptoName}}</td>
+                <td>{{pnrData?.Class}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </mat-card-content>
+      </mat-card>
+      <mat-card class="xm mt-2">
+        <mat-card-content>
+          <table class="table table-bordered">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">Charting Status</th>
+                <th scope="col">Departure Time</th>
+                <th scope="col">Arrival Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">{{pnrData?.ChartPrepared ? 'Chart Prepared' : 'Chart not prepared'}}</th>
+                <td>{{pnrData?.DepartureTime}}</td>
+                <td>{{pnrData?.ArrivalTime}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </mat-card-content>
+      </mat-card>
+      <mat-card class="xm mt-2">
+        <mat-card-content>
+          <table class="table table-bordered">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">Journey Duration</th>                
+                <th scope="col">Has Pantry</th>
+                <th scope="col">Expected Platform</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{pnrData?.Duration}} Hrs</td>                
+                <td>{{pnrData?.HasPantry ? 'Yes' : 'No'}}</td>
+                <td>{{pnrData?.ExpectedPlatformNo}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </mat-card-content>
+      </mat-card>
+      <!-------Mobile only end-->
+      <mat-card class="md mt-2">
         <mat-card-content>
           <table class="table table-bordered">
             <thead class="table-dark">
