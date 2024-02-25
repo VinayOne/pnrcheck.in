@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
+import { GoogleTagManagerService } from "angular-google-tag-manager";
 
 
 @NgModule({
@@ -18,6 +19,8 @@ import { SharedModule } from './shared/shared.module';
     SharedModule
   ],
   providers: [
+    { provide: 'googleTagManagerId', useValue: 'GTM-P8ZNK9B2' },
+    GoogleTagManagerService,
     provideClientHydration()
   ],
   bootstrap: [AppComponent]

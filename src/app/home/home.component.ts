@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators, AbstractControl } from '@angular/forms';
 import { CommonService } from '../shared/common.service';
-import { NavigationEnd, Router } from '@angular/router';
 import { GoogleTagManagerService } from 'angular-google-tag-manager';
 
 @Component({
@@ -19,10 +18,9 @@ export class HomeComponent implements OnInit {
     pnrNum: new FormControl<any>('', [Validators.required, Validators.maxLength(10), Validators.minLength(10), Validators.pattern(/^[0-9]*$/)])
   })
 
-  constructor(private commonService: CommonService, private router: Router, private gtmService: GoogleTagManagerService) {}
+  constructor(private commonService: CommonService, private gtmService: GoogleTagManagerService) {}
 
   ngOnInit(): void {
-    this.sendGtmEvents();
     this.getIp();
   }
 
@@ -46,18 +44,6 @@ export class HomeComponent implements OnInit {
       })
     }
   }
-
-  sendGtmEvents() {
-    this.router.events.forEach(item => {
-      if (item instanceof NavigationEnd) {
-          const gtmTag = {
-              event: 'page',
-              pageName: item.url
-          };
-          this.gtmService.pushTag(gtmTag);
-      }
-  });
-}
 
 sendCustomEvent() {
     const gtmTag = {

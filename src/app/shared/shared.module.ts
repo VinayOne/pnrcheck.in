@@ -12,7 +12,6 @@ import { LoaderComponent } from '../home/loader/loader.component';
 import { ServicesComponent } from '../home/services/services.component';
 import { PnrinfoComponent } from '../home/pnrinfo/pnrinfo.component';
 import { CommonService } from './common.service';
-import { GoogleTagManagerService } from "angular-google-tag-manager";
 
 
 
@@ -49,8 +48,7 @@ import { GoogleTagManagerService } from "angular-google-tag-manager";
     PnrinfoComponent
   ],
   providers: [
-    { provide: 'googleTagManagerId', useValue: 'GTM-P8ZNK9B2' },
-    CommonService, GoogleTagManagerService
+    CommonService
   ]
 })
 export class SharedModule { }
