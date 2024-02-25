@@ -21,4 +21,8 @@ export class CommonService {
     return this.http.get<any>(`https://irctc1.p.rapidapi.com/api/v3/getPNRStatus?pnrNumber=${pnr}`, headerOptions);
     // return this.http.get<any>(`https://api.jsonbin.io/v3/qs/65da2bf4266cfc3fde8ec826`, headerOptions);
   }
+
+  public getIPAddress() {  
+    return this.http.get("http://api.ipify.org/?format=json");  
+  }
 }
