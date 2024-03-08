@@ -8,7 +8,15 @@ const routes: Routes = [
     path: 'privacy-policy',
     loadChildren: () => import('./privacy-policy/privacy-policy.module').then(mod => mod.PrivacyPolicyModule)
   },
-  {path: '**', redirectTo: '', pathMatch:'full'}
+  {
+    path: 'disclaimer',
+    loadChildren: () => import('./disclaimer/disclaimer.module').then(mod => mod.DisclaimerModule)
+  },
+  {
+    path: 'about-us',
+    loadChildren: () => import('./about-us/about-us.module').then(mod => mod.AboutUsModule)
+  },
+  {path: '**', component: HomeComponent}
 ];
 
 @NgModule({
