@@ -4,6 +4,10 @@ import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
+  {
+    path: 'privacy-policy',
+    loadChildren: () => import('./privacy-policy/privacy-policy.module').then(mod => mod.PrivacyPolicyModule)
+  },
   {path: '**', redirectTo: '', pathMatch:'full'}
 ];
 
