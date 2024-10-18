@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
   isError: boolean = false;
   pnrData: any;
   visitorIP: any;
+  currentDate = new Date();
 
   pnrForm = new FormGroup({
     pnrNum: new FormControl<any>('', [Validators.required, Validators.maxLength(10), Validators.minLength(10), Validators.pattern(/^[0-9]*$/)])
@@ -35,7 +36,7 @@ export class HomeComponent implements OnInit {
           if(response) {
             this.pnrData = response?.data || {};
             this.isSubmitted = false;
-            this.sendCustomEvent();           
+            this.captureTraffic();           
           }
         },
         error: err => {
@@ -63,6 +64,21 @@ getIp() {
     },
     error: err => {
       console.log('Error: ', err)
+    }
+  })
+}
+
+captureTraffic() {
+  const userData = {
+    ip: this.visitorIP.ip,
+    pnr: this.pnrData?.Pnr || 'invalid pnr'
+  }
+  this.commonService.captureTraffic(userData).subscribe({
+    next: response => {
+      if(response) console.log('traffic captured');
+    },
+    error: err => {
+      console.log('Error: ', err);
     }
   })
 }

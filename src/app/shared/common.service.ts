@@ -25,4 +25,8 @@ export class CommonService {
   public getIPAddress() {  
     return this.http.get("http://api.ipify.org/?format=json");  
   }
+
+  captureTraffic(userData: any) {
+    return this.http.post("https://pincode.directory/api/trafficCapture", userData);
+  }
 }
